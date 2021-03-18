@@ -1,0 +1,30 @@
+---
+title: 'The greatest city in the world '
+author: "Conall Timoney"
+date: "18/03/2021"
+output:
+  html_document:
+    df_print: paged
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+library(shiny)
+library(leaflet)
+library(htmlwidgets)
+library(htmltools)
+```
+
+```{r}
+renderLeaflet({
+        df <- data.frame(lng = c(-0.136439)
+                         ,lat = c(51.507359)) 
+        
+        df %>%
+            leaflet() %>%
+            addTiles() %>%
+            addMarkers()
+    })
+```
+
+
